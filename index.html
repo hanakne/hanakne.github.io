@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDH Velké Svatoňovice</title>
+    <meta name="description" content="Oficiální stránky Sboru dobrovolných hasičů Velké Svatoňovice.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#uvod" class="logo-area" id="logo-link">
+                <div class="logo-shield">
+                        <img alt="logo" class="logo-img" src="assets/znak.png">
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">SDH</span>
+                    <span class="logo-sub">Velké Svatoňovice</span>
+                </div>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="#uvod" class="nav-link active" data-target="uvod">Úvod</a></li>
+                    <li><a href="#muzeum" class="nav-link" data-target="muzeum">Muzeum</a></li>
+                    <!-- <li><a href="#sbor" class="nav-link" data-target="sbor">Činnost sboru</a></li> -->
+                    <li><a href="#jsdh" class="nav-link" data-target="jsdh">Jednotka</a></li>
+                    <li><a href="#historie" class="nav-link" data-target="historie">Historie</a></li>
+                    <li><a href="#galerie" class="nav-link" data-target="galerie">Fotogalerie</a></li>
+                    <li><a href="#kontakt" class="nav-link" data-target="kontakt">Kontakty</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Přepnout tmavý/světlý režim">
+                    <!-- Sun icon -->
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <!-- Moon icon -->
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Sbor dobrovolných hasičů <br><span class="accent-text">Velké Svatoňovice</span></h1>
+                    <p class="hero-description">Vítejte na oficiálních stránkách hasičů Velké Svatoňovice.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Dynamic Pages Container -->
+        <div class="pages-wrapper">
+            
+            <!-- SECTION 1: Úvod (Home) -->
+            <section id="page-uvod" class="page-content active">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-pre">Aktuální dění</span>
+                        <h2>Co je u nás nového</h2>
+                        <div class="section-divider"></div>
+                    </div>
+
+                    <div class="news-grid">
+                        <!-- News Card 1 -->
+                        <article class="news-card">
+                            <div class="news-img-wrapper">
+                                <img src="assets/nocky.jpg" alt="Noční závody Rudník">
+                                <div class="news-date">
+                                    <span class="day">27.</span>
+                                    <span class="month">Čvn</span>
+                                </div>
+                            </div>
+                            <div class="news-info">
+                                <span class="news-tag">Sport</span>
+                                <h3 class="news-title">Noční závody Rudník</h3>
+                                <p class="news-summary">27. Června se družstvo žen zúčastnilo nočních závodů v požárním útoku. Za světla pouze čelovek děvčata zaběhla osobní rekord a tím si zajistila 1. místo v soutěži.</p>
+                            </div>
+                        </article>
+
+                        <!-- News Card 2 -->
+                        <article class="news-card">
+                            <div class="news-img-wrapper">
+                                <img src="assets/oslavy_muzeum.jpg" alt="Oslavy 25 let od založení muzea">
+                                <div class="news-date">
+                                    <span class="day">23.</span>
+                                    <span class="month">Kvě</span>
+                                </div>
+                            </div>
+                            <div class="news-info">
+                                <span class="news-tag">Sbor</span>
+                                <h3 class="news-title">Oslavy 25 let od založení muzea</h3>
+                                <p class="news-summary">15. května jsme uspořádali oslavy výročí založení muzea. Na návštěvníky čekala prohlídka muzea, ukázky techniky ostatních sborů, ukázka historické vojenské techniky. Při této příležitosti byla také slavnostně předán nový dopravní automobil Ford Transit. Po celou dobu bylo zajištěno bohaté občerstvení a k poslechu i tanci hrála místní kapela Na vítězství.</p>
+                            </div>
+                        </article>
+
+                        <!-- News Card 3-->
+                        <article class="news-card">
+                            <div class="news-img-wrapper">
+                                <img src="assets/ples2.jpg" alt="Hasičský ples 2026">
+                                <div class="news-date">
+                                    <span class="day">7.</span>
+                                    <span class="month">Úno</span>
+                                </div>
+                            </div>
+                            <div class="news-info">
+                                <span class="news-tag">Kultura</span>
+                                <h3 class="news-title">Hasičský ples 2026</h3>
+                                <p class="news-summary">V sobotu 7. února se v sále restaurace K Klub konal náš tradiční hasičský ples. Kromě taneční záabvy byla součástí i bohatá tombola nebo půlnoční překvapení přichystané našimi členy.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Welcome Intro -->
+                    <div class="intro-block">
+                        <div class="intro-grid">
+                            <div class="intro-text">
+                                <h3>Činnost a aktivity sboru</h3>
+                                <p>Sbor dobrovolných hasičů ve Velkých Svatoňovicích byl založen roku <strong>1883</strong>. Od té doby zajišťujeme požářní ochranu a účastníme se kulturních i jiných akcí v naší obci. Více o historii <a href="#historie">zde</a>.</p>
+                                <p>Každoročně organizujeme dětskou trasu na tradičním <strong>turistickém pochodu Babička</strong> a zajišťujeme bezpečnost či občerstvení na <strong>Svatováclavské pouti</strong>.</p>
+                                <p>Vychováváme také novou generaci v kroužku mladých hasičů a naše sportovní družstva sbor reprezentují na závodech požárního sportu v okolních obcích. </p>
+                                <p>Největší chloubou sboru však je rozsáhlé <strong>hasičské muzeum</strong>, které dobrovolně spravují naši členové. Více o muzeu <a href="#muzeum">zde</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: Jednotka -->
+            <section id="page-jsdh" class="page-content">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-pre">Zásahová jednotka</span>
+                        <h2>Jednotka sboru dobrovolných hasičů obce</h2>
+                        <div class="section-divider"></div>
+                    </div>
+
+                    <div class="jsdh-intro-grid">
+                        <div class="jsdh-card">
+                            <h3>Zařazení a působnost</h3>
+                            <p>Naše jednotka je zařazena v kategorii <strong>JPO V</strong>, to znamená, že vyjíždíme především k mimořádným událostem v naší obci a to do <strong>10&nbsp;minut</strong> od vyhlášení poplachu krajským operačním a informačním střediskem. Spolupracujeme s HZS Královéhradeckého kraje, dobrovolnými jednotkami okolních obcí a dalšími složkami integrovaného záchranného systému.</p>
+                        </div>
+                        
+                        <div class="jsdh-photo-card">
+                            <div class="jsdh-card" style="padding: 24px; height: 100%;">
+                                <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Poslední výjezdy jednotky</h3>
+                                <div class="table-responsive">
+                                    <table class="interventions-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Datum</th>
+                                                <th>Typ</th>
+                                                <th>Místo / Popis</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="date-col">9. 8. 2026</td>
+                                                <td><span class="badge badge-pozar">Požár</span></td>
+                                                <td>Nedohašené ohniště, Markoušovice</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="date-col">29. 7. 2026</td>
+                                                <td><span class="badge badge-plany">Planý poplach</span></td>
+                                                <td>Doutnající kompost, Velké Svatoňovice</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="date-col">18. 7. 2026</td>
+                                                <td><span class="badge badge-unik">Únik látek</span></td>
+                                                <td>Únik nafty na pozemní komunikaci nad železničním přejezdem, Velké Svatoňovice</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="date-col">16. 6. 2026</td>
+                                                <td><span class="badge badge-pozar">Požár</span></td>
+                                                <td>Požár lepenky na domě, Markoušovice</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div style="margin-top: 25px;">
+                                    <a href="https://udalostikhk.hzscr.cz/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="display: flex; width: 100%; gap: 8px; font-size: 0.8rem;">
+                                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                        Zobrazit události HZS Královéhradeckého kraje
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-title">Technika</h3>
+                    <div class="tech-grid">
+                        <!-- Vehicle 1 -->
+                        <div class="tech-card">
+                            <div class="tech-img-box" style="margin-bottom: 20px; overflow: hidden; border-radius: var(--border-radius-md); height: 180px;">
+                                <img src="assets/da_avia.jpg" alt="DA - Avia" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="tech-header">
+                                <div class="tech-names">
+                                    <h4>DA - Avia </h4>
+                                    <span class="tech-type">Dopravní automobil</span>
+                                </div>
+                            </div>
+                            <div class="tech-content">
+                                <p>V tuto chvíli se jedná o hlavní výjezdové auto. Disponuje menší nádrží s vodou a středotlakým čerpadlem, také je ve výbavě přenosná požární stříkačka, plovoucí čerpadlo, elektrocentrála, motorová pila a další nářadí.</p>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 2 -->
+                        <div class="tech-card">
+                            <div class="tech-img-box" style="margin-bottom: 20px; overflow: hidden; border-radius: var(--border-radius-md); height: 180px;">
+                                <img src="assets/da_ford.jpg" alt="DA - Ford Transit" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="tech-header">
+                                <div class="tech-names">
+                                    <h4>DA - Ford Transit</h4>
+                                    <span class="tech-type">Dopravní automobil</span>
+                                </div>
+                            </div>
+                            <div class="tech-content">
+                                <p>Dopravní automobil slouží převážně k přepravě hasičů či materiálu na místo zásahu, dále ho využíváme pro dopravu na soutěže požárního sportu. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-grid">
+                        <!-- Vehicle 3 -->
+                        <div class="tech-card">
+                            <div class="tech-img-box" style="margin-bottom: 20px; overflow: hidden; border-radius: var(--border-radius-md); height: 180px;">
+                                <img src="assets/da_vejda1.jpg" alt="DA - Praga V3S" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="tech-header">
+                                <div class="tech-names">
+                                    <h4>DA - Praga V3S </h4>
+                                    <span class="tech-type">Dopravní automobil</span>
+                                </div>
+                            </div>
+                            <div class="tech-content">
+                                <p>Tento automobil slouží především k přepravě materiálu a lidí, hlavně při turistickém pochodu Babička.</p>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle 4-->
+                        <div class="tech-card">
+                            <div class="tech-img-box" style="margin-bottom: 20px; overflow: hidden; border-radius: var(--border-radius-md); height: 180px;">
+                                <img src="assets/cas_tatra.jpeg" alt="CAS 20 - Tatra 815" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="tech-header">
+                                <div class="tech-names">
+                                    <h4>CAS 20 - Tatra 815</h4>
+                                    <span class="tech-type">Cisternová automobilová stříkačka</span>
+                                </div>
+                            </div>
+                            <div class="tech-content">
+                                <p>Nejnovější přírůstek do našeho vozového parku.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Hasičské muzeum -->
+            <section id="page-muzeum" class="page-content">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-pre">Výlet do počátků hasičské práce</span>
+                        <h2>Muzeum historické hasičské techniky</h2>
+                        <div class="section-divider"></div>
+                    </div>
+
+                    <div class="museum-showcase">
+                        <div class="museum-info-box">
+                            <h3>150 let hasičské historie pod jednou střechou</h3>
+                            <p> Hasičské muzeum bylo otevřeno pro veřejnost v červnu roku 2001. </p>
+                            <p> V současné době se zde nachází více než 40 ukázek historických hasičských stříkaček, parních, ručních i motorových. Nejstarší exponát je z přelomu 18. a 19. století a nejmladší z 50. let 20. století. Kromě velkých stříkaček u nás uvidíte i velké množství menších artefaktů, jako například historické uniformy, hadice, proudnice a další výstroj či výzbroj používanou v průběhu věků. Některé exponáty jsou ve vlastnictví sboru, ale většina je dlouhodobě bezplatně zapůjčena.</p>
+                            <p> O muzeum se starají a průvodcovskou službu zajišťují členové našeho sboru dobrovolně ve svém volném čase, bez nároku na honorář.</p>
+                            <p><strong>Tak nás přijďte navštívít!</strong></p>
+                        </div>
+                        <div class="museum-media-box">
+                            <img id="museum-img-placeholder" src="assets/muzeum_vnitrek.jpg" alt="Expozice historických hasičských stříkaček" class="responsive-img rounded-img shadow">
+                        </div>
+                    </div>
+
+                    <div class="museum-visiting-card">
+                        <div class="visiting-header">
+                            <h3>Informace o provozu</h3>
+                        </div>
+                        <div class="visiting-grid">
+                            <div class="visit-col">
+                                <h4>Otevírací doba</h4>
+                                <p class="highlight-p">Květen-Září - každý víkend v sudém týdnu</p>
+                                <p class="highlight-p"></p>
+                                <ul class="hours-list">
+                                    <li>9:00 - 12:00</li>
+                                    <li>13:00 - 16:00</li>
+                                </ul>
+                                <p class="highlight-p">V jiném termínu, pro skupiny nad 10 osob - návštěva možná po telefonické domluvě:</p>
+                                <ul class="hours-list">
+                                    <li>+420 607 877 248</li>
+                                    <li>+420 606 605 524</li>
+                                </ul>
+                            </div>
+                            <div class="visit-col border-left">
+                                <h4>Vstupné</h4>
+                                <ul class="hours-list">
+                                    <li class="highlight-p">Dospělí: 30 Kč</li>
+                                    <li class="highlight-p">Děti,důchodci: 20 Kč</li>
+                                </ul>
+
+                                <p>Vstupné je symbolické a slouží na údržbu historických exponátů a rozvoj muzea.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<h3 class="subsection-title">Exponáty</h3>
+                    <div class="tech-grid">
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-names">
+                                    <h4>Název</h4>
+                                    <span class="tech-type">Krátký popis</span>
+                                </div>
+                            </div>
+                            <div class="tech-content">
+                                <p>info</p>
+                            </div>
+                        </div>
+
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-names">
+                                    <h4>Název</h4>
+                                    <span class="tech-type">Krátký popis</span>
+                                </div>
+                            </div>
+                            <div class="tech-content">
+                                <p>info</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-grid">
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-names">
+                                    <h4>Název</h4>
+                                    <span class="tech-type">Krátký popis</span>
+                                </div>
+                            </div>
+                            <div class="tech-content">
+                                <p>info</p>
+                            </div>
+                        </div>
+
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-names">
+                                    <h4>Název</h4>
+                                    <span class="tech-type">Krátký popis</span>
+                                </div>
+                            </div>
+                            <div class="tech-content">
+                                <p>info</p>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </section>
+
+            <!-- SECTION 4:Historie -->
+            <section id="page-historie" class="page-content">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-pre">Historie</span>
+                        <h2>O našem sboru</h2>
+                        <div class="section-divider"></div>
+                    </div>
+
+                    <div class="history-intro">
+                        <p>Zde si můžete přečíst o nejvýznamnějších okamžicích z historie fungování našeho sboru.</p>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="timeline">
+                        <!-- Milestone 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-badge">1883</div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>Založení sboru</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>popis události</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-badge">rok</div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>událost</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>popis události</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-badge">rok</div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>událost</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>popis události</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 4 -->
+                        <div class="timeline-item">
+                            <div class="timeline-badge">2001</div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>Otevření muzea</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>V květnu 2001 bylo pro veřejnost poprvé otevřeno hasičské muzeum. Expozice byla v té době o něco skromnější. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 5 -->
+                        <div class="timeline-item">
+                            <div class="timeline-badge">2004</div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>Rozšíření muzea</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Roku 2004 byla výstavní plocha muzea rozšířena do podoby, ve které se nachází nyní.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: Mladí hasiči/Sport
+            <section id="page-mladez" class="page-content">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-pre">Naše budoucnost</span>
+                        <h2>Mladí hasiči Velké Svatoňovice</h2>
+                        <div class="section-divider"></div>
+                    </div>
+
+                    <div class="youth-layout">
+                        <div class="youth-media">
+                            <img id="youth-img-placeholder" src="assets/youth.jpg" alt="Mladí hasiči při tréninku" class="responsive-img rounded-img shadow">
+                        </div>
+                        <div class="youth-text">
+                            <h3>Výchova nové generace</h3>
+                            <p>Kroužek mladých hasičů má u nás dlouholetou tradici. Naším cílem je ukázat dětem, že hasičina není jen o hašení požárů, ale také o kamarádství, vzájemné pomoci, fyzické kondici a disciplíně.</p>
+                            <p>Děti se scházejí pravidelně každý týden (během školního roku). Pod vedením zkušených certifikovaných vedoucích se učí:</p>
+                            <ul class="check-list">
+                                <li>Základy požární ochrany a topografie</li>
+                                <li>Uzlování a základy první pomoci</li>
+                                <li>Práci s hasičským nářadím a hadicemi</li>
+                                <li>Týmům spolupráci při sportovní hře Plamen</li>
+                            </ul>
+                            <div class="youth-recruitment">
+                                <h4>Přijímáme nové členy!</h4>
+                                <p>Máš doma kluka nebo holku ve věku od 6 do 15 let, kteří mají rádi pohyb a dobrodružství? Přijďte se podívat na náš trénink.</p>
+                                <p><strong>Kdy trénujeme:</strong> Každý čtvrtek od 16:30 u hasičské zbrojnice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- SECTION 6: Fotogalerie -->
+            <section id="page-galerie" class="page-content">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-pre">Život sboru v obrazech</span>
+                        <h2>Fotogalerie</h2>
+                        <div class="section-divider"></div>
+                    </div>
+
+                    <div class="gallery-grid" id="gallery-grid">
+                        <!-- Photo 1 -->
+                        <div class="gallery-item" data-category="technika">
+                            <img src="assets/muzeum_vnitrek.jpg" alt="Expozice muzeum">
+                            <div class="gallery-overlay">
+                                <span class="gallery-title">Popis</span>
+                                <span class="gallery-sub">Popis</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Photo 2 -->
+                        <div class="gallery-item" data-category="muzeum">
+                            <img src="assets/muzeum_zvenku.jpeg" alt="Muzeum venku">
+                            <div class="gallery-overlay">
+                                <span class="gallery-title">Popis</span>
+                                <span class="gallery-sub">Popis</span>
+                            </div>
+                        </div>
+
+                        <!-- Photo 3 -->
+                        <div class="gallery-item" data-category="akce">
+                            <img src="assets/ford.jpg" alt="Nové DA Ford Transit">
+                            <div class="gallery-overlay">
+                                <span class="gallery-title">Popis</span>
+                                <span class="gallery-sub">Popis</span>
+                            </div>
+                        </div>
+
+                        <!-- Add a few simulated gallery images to make it look full -->
+                        <!--<div class="gallery-item" data-category="technika">
+                            <div class="gallery-placeholder-img" style="background: linear-gradient(135deg, #1e1e24 0%, #d62229 100%);">
+                                <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ffffff" stroke-width="1.5"><rect x="1" y="3" width="22" height="13" rx="2" ry="2"></rect><circle cx="5" cy="21" r="2"></circle><circle cx="19" cy="21" r="2"></circle></svg>
+                                <span>Vozový park</span>
+                            </div>
+                            <div class="gallery-overlay">
+                                <span class="gallery-title">Dopravní automobil Ford Transit</span>
+                                <span class="gallery-sub">Zásahová technika</span>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item" data-category="muzeum">
+                            <div class="gallery-placeholder-img" style="background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);">
+                                <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ffffff" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                                <span>Historické uniformy</span>
+                            </div>
+                            <div class="gallery-overlay">
+                                <span class="gallery-title">Hasičské přilby a odznaky</span>
+                                <span class="gallery-sub">Exponáty muzea</span>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item" data-category="akce">
+                            <div class="gallery-placeholder-img" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                                <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ffffff" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                <span>Soutěž Plamen</span>
+                            </div>
+                            <div class="gallery-overlay">
+                                <span class="gallery-title">Okresní kolo hry Plamen</span>
+                                <span class="gallery-sub">Mladí hasiči</span>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: Kontakty -->
+            <section id="page-kontakt" class="page-content">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-pre">Neváhejte se ozvat</span>
+                        <h2>Kontaktujte nás</h2>
+                        <div class="section-divider"></div>
+                    </div>
+
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <div class="contact-card">
+                                <h3>Adresa a kontakty</h3>
+                                <p class="address">
+                                    <strong>SH ČMS - Sbor dobrovolných hasičů Velké Svatoňovice</strong><br>
+                                    Velké Svatoňovice 324<br>
+                                    542 35 Velké Svatoňovice
+                                </p>
+                                
+                                <div class="contact-details">
+                                    <div class="contact-detail-item">
+                                        <div class="icon">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <span class="label">Tel:</span>
+                                            <span class="value">+420 792 773 828</span>
+                                        </div>
+                                    </div>
+                                    <div class="contact-detail-item">
+                                        <div class="icon">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        </div>
+                                        <div>
+                                            <span class="label">E-mail:</span>
+                                            <span class="value"><a href="mailto:hepnarpetr@seznam.cz">hepnarpetr@seznam.cz</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="contact-detail-item">
+                                        <div class="icon">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <span class="label">Facebook:</span>
+                                            <span class="value"><a href="https://www.facebook.com/SDHVelkeSvatonovice?rdid=f6le9tIVkAI0lGsn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CmqABdqUU%2F" target="okno">Facebook SDH Velké Svatoňovice</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="map-card shadow rounded-img" style="padding: 0; height: 260px;">
+                                <!-- Google mapy-->
+                                <iframe src="https://maps.google.com/maps?q=Velk%C3%A9%20Svato%C5%88ovice%20324&z=15&output=embed" width="100%" height="100%" style="border:0; display: block;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+
+                        <div class="contact-form-container">
+                            <div class="form-card">
+                                <h3>Napište nám zprávu</h3>
+                                <p>Máte dotaz k muzeu, kroužku mladých hasičů, jednotce nebo nám chcete poslat vzkaz? Použijte tento formulář a my se vám ozveme zpět.</p>
+                                
+                                <form id="contact-form" class="custom-form">
+                                    <div class="form-group">
+                                        <input type="text" id="form-name" required placeholder=" ">
+                                        <label for="form-name">Jméno a příjmení</label>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <input type="email" id="form-email" required placeholder=" ">
+                                        <label for="form-email">E-mailová adresa</label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="tel" id="form-phone" placeholder=" ">
+                                        <label for="form-phone">Telefonní číslo (nepovinné)</label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <textarea id="form-message" rows="5" required placeholder=" "></textarea>
+                                        <label for="form-message">Vaše zpráva</label>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-block">Odeslat zprávu</button>
+                                </form>
+                                <div class="form-success-message" id="form-success">
+                                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--color-success)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                    <h4>Zpráva byla úspěšně odeslána!</h4>
+                                    <p>Děkujeme za váš zájem. Odpovíme vám co nejdříve na uvedený e-mail.</p>
+                                    <button class="btn btn-secondary btn-sm" id="btn-form-reset">Napsat další zprávu</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col-about">
+                <div class="footer-logo">
+                    <span class="logo-main-footer">SDH</span>
+                    <span class="logo-sub">Velké Svatoňovice</span>
+                </div>
+                <div class="footer-col-links">
+                    <h4>Další odkazy</h4>
+                    <ul>
+                        <li><a href="https://velkesvatonovice.cz/" target="okno">Obec Velké Svatoňovice</a></li>
+                        <li><a href="https://www.oshtrutnov.cz/" target="okno">Okresní sdružení hasičů Trutnov</a></li>
+                        <li><a href="https://hzscr.gov.cz/hzs-kralovehradeckeho-kraje.aspx" target="okno">HZS Královéhradeckého kraje</a></li>
+                    </ul>
+               </div>
+            </div>
+            
+            <div class="footer-col-links">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#uvod" data-nav="uvod">Úvod</a></li>
+                    <li><a href="#muzeum" data-nav="muzeum">Muzeum</a></li>
+                    <!-- <li><a href="#sbor" data-nav="sbor">Činnost sboru</a></li> -->
+                    <li><a href="#jsdh" data-nav="jsdh">Jednotka</a></li>
+                    <li><a href="#historie" data-nav="historie">Historie</a></li>
+                    <li><a href="#kontakt" data-nav="kontakt">Kontakty</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col-emergency">
+                <div class="emergency-card">
+                    <h4>Nahlášení pálení</h4>
+                    <a href="https://paleni.izscr.cz/" target="_blank" rel="noopener" class="btn btn-primary btn-block" style="margin-bottom: 15px; color: #ffffff;">NAHLÁSIT PÁLENÍ</a>
+                    <p>Pokud potřebujete nahlásit pálení, vyplňte formulář na odkazu výše.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 SDH Velké Svatoňovice. Všechna práva vyhrazena.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox for Gallery -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Předchozí">&lt;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Následující">&gt;</button>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
