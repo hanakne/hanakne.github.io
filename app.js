@@ -170,113 +170,119 @@ document.addEventListener('DOMContentLoaded', () => {
         history.pushState(null, null, '#uvod');
     });
 
-    // --- 4. GALLERY FILTERS ---
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Update filter buttons UI
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    // --- 4. ALBUM GALLERY ---
 
-            const filterValue = btn.getAttribute('data-filter');
+    // Define albums: each album has a name and an array of { src, caption }
+    const albumData = {
+        muzeum: {
+            name: 'Oslavy 25 let muzea',
+            photos: [
+                { src: 'assets/muzeum_zvenku.jpeg', caption: 'Budova muzea zvenku' },
+                { src: 'assets/muzeum_vnitrek.jpg', caption: 'Expozice uvnitř muzea' },
+                { src: 'assets/hero_bg.jpg',         caption: 'Slavnostní předání Fordu Transit' },
+            ]
+        },
+        technika: {
+            name: 'Technika sboru',
+            photos: [
+                { src: 'assets/ford.jpg',      caption: 'DA - Ford Transit' },
+                { src: 'assets/avia.jpg',       caption: 'DA - Avia' },
+                { src: 'assets/praga_v3s.jpg',  caption: 'DA - Praga V3S' },
+                { src: 'assets/hero_bg.jpg',    caption: 'CAS 20 - Tatra 815' },
+            ]
+        },
+        mladezi: {
+            name: 'Mladí hasiči',
+            photos: [
+                { src: 'assets/youth.jpg',     caption: 'Tréninky mladých hasičů' },
+                { src: 'assets/hero_bg.jpg',   caption: 'Závody mladých hasičů' },
+            ]
+        }
+    };
 
-            galleryItems.forEach(item => {
-                const category = item.getAttribute('data-category');
-                if (filterValue === 'all' || category === filterValue) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+    // Album lightbox state
+    const AlbumState = { photos: [], index: 0 };
+
+    const albumLightbox  = document.getElementById('album-lightbox');
+    const albumLbImg     = document.getElementById('album-lb-img');
+    const albumLbTitle   = document.getElementById('album-lb-title');
+    const albumLbCounter = document.getElementById('album-lb-counter');
+    const albumLbThumbs  = document.getElementById('album-lb-thumbs');
+    const albumLbClose   = document.getElementById('album-lb-close');
+    const albumLbPrev    = document.getElementById('album-lb-prev');
+    const albumLbNext    = document.getElementById('album-lb-next');
+
+    const renderAlbumLightbox = (index) => {
+        AlbumState.index = index;
+        const photo = AlbumState.photos[index];
+        albumLbImg.setAttribute('src', photo.src);
+        albumLbImg.setAttribute('alt', photo.caption);
+        albumLbCounter.textContent = `${index + 1} / ${AlbumState.photos.length}`;
+        // Update thumbs
+        albumLbThumbs.querySelectorAll('.album-lb-thumb').forEach((th, i) => {
+            th.classList.toggle('active', i === index);
+        });
+    };
+
+    const openAlbum = (albumKey) => {
+        const album = albumData[albumKey];
+        if (!album) return;
+        AlbumState.photos = album.photos;
+        albumLbTitle.textContent = album.name;
+
+        // Build thumbnails
+        albumLbThumbs.innerHTML = '';
+        album.photos.forEach((photo, i) => {
+            const thumb = document.createElement('img');
+            thumb.src = photo.src;
+            thumb.alt = photo.caption;
+            thumb.className = 'album-lb-thumb';
+            thumb.addEventListener('click', () => renderAlbumLightbox(i));
+            albumLbThumbs.appendChild(thumb);
+        });
+
+        renderAlbumLightbox(0);
+        albumLightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeAlbum = () => {
+        albumLightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    const navigateAlbum = (dir) => {
+        const count = AlbumState.photos.length;
+        let next = AlbumState.index + dir;
+        if (next < 0) next = count - 1;
+        if (next >= count) next = 0;
+        renderAlbumLightbox(next);
+    };
+
+    // Bind album card clicks
+    document.querySelectorAll('.album-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const key = card.getAttribute('data-album');
+            openAlbum(key);
         });
     });
 
-    // --- 5. GALLERY LIGHTBOX ---
-    // Extract visible items in correct order
-    const getVisibleGalleryItems = () => {
-        return Array.from(galleryItems).filter(item => item.style.display !== 'none');
-    };
+    albumLbClose.addEventListener('click', closeAlbum);
+    albumLbPrev.addEventListener('click', () => navigateAlbum(-1));
+    albumLbNext.addEventListener('click', () => navigateAlbum(1));
 
-    const showLightbox = (index) => {
-        const visibleItems = getVisibleGalleryItems();
-        if (visibleItems.length === 0) return;
-        
-        AppState.galleryItems = visibleItems;
-        AppState.currentGalleryIndex = index;
-
-        const currentItem = visibleItems[index];
-        const imgElement = currentItem.querySelector('img');
-        const overlayTitle = currentItem.querySelector('.gallery-title')?.textContent || '';
-        
-        let src = '';
-        if (imgElement) {
-            src = imgElement.getAttribute('src');
-        } else {
-            // For placeholder gallery items, extract background gradient/style if necessary,
-            // or use standard placeholder representations
-            const placeholder = currentItem.querySelector('.gallery-placeholder-img');
-            if (placeholder) {
-                // Just display a nice template image
-                src = 'assets/hero_bg.jpg'; // Fallback
-            }
-        }
-
-        lightboxImg.setAttribute('src', src);
-        lightboxCaption.textContent = overlayTitle;
-        
-        lightbox.classList.add('active');
-    };
-
-    const closeLightbox = () => {
-        lightbox.classList.remove('active');
-    };
-
-    const navigateLightbox = (direction) => {
-        const count = AppState.galleryItems.length;
-        if (count === 0) return;
-
-        let nextIndex = AppState.currentGalleryIndex + direction;
-        
-        // Wrap around limits
-        if (nextIndex < 0) nextIndex = count - 1;
-        if (nextIndex >= count) nextIndex = 0;
-
-        showLightbox(nextIndex);
-    };
-
-    // Bind gallery click events
-    galleryItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            const visibleItems = getVisibleGalleryItems();
-            const visibleIndex = visibleItems.indexOf(item);
-            if (visibleIndex !== -1) {
-                showLightbox(visibleIndex);
-            }
-        });
+    albumLightbox.addEventListener('click', (e) => {
+        if (e.target === albumLightbox) closeAlbum();
     });
 
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
-    lightboxNext.addEventListener('click', () => navigateLightbox(1));
-    
-    // Close on overlay click
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
-    });
-
-    // Keyboard support for gallery
     document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
-        
-        if (e.key === 'Escape') {
-            closeLightbox();
-        } else if (e.key === 'ArrowLeft') {
-            navigateLightbox(-1);
-        } else if (e.key === 'ArrowRight') {
-            navigateLightbox(1);
-        }
+        if (!albumLightbox.classList.contains('active')) return;
+        if (e.key === 'Escape')      closeAlbum();
+        if (e.key === 'ArrowLeft')   navigateAlbum(-1);
+        if (e.key === 'ArrowRight')  navigateAlbum(1);
     });
+
+
 
     // --- 6. EMERGENCY DISPATCH SIMULATION (DEMO) ---
     const formatTime = (secs) => {
