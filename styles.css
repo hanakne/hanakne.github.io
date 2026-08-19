@@ -2181,11 +2181,19 @@ body.light-theme .map-link:hover .mock-map {
         padding-right: 0;
         text-align: left !important;
     }
-    
-    .timeline-item:nth-child(odd) .timeline-badge,
+
+
+    .timeline-item:nth-child(odd) .timeline-badge {
+        left: 5px;
+    }
     .timeline-item:nth-child(even) .timeline-badge {
         left: 5px;
     }
+    .timeline-item:nth-child(even) {
+        left: 0;
+        text-align: left;
+    }
+
     
     .visiting-grid {
         grid-template-columns: 1fr;
@@ -2253,7 +2261,7 @@ body.light-theme .map-link:hover .mock-map {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
     .youth-layout {
         grid-template-columns: 1fr;
         gap: 30px;
