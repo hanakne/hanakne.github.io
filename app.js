@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 albumLbImg.alt = photo.caption || '';
             }
             if (albumLbCounter) {
-                albumLbCounter.textContent = `${index + 1} / ${AlbumState.photos.length} — ${photo.caption || ''}`;
+                albumLbCounter.textContent = `${index + 1} / ${AlbumState.photos.length}`;
             }
             if (albumLbThumbs) {
                 albumLbThumbs.querySelectorAll('.album-lb-thumb').forEach((th, i) => {

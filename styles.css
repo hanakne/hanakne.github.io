@@ -1345,16 +1345,24 @@ h3 {
     color: var(--color-text-muted);
 }
 
-/* --- ALBUM LIGHTBOX --- */
+/* --- ALBUM LIGHTBOX (FULLSCREEN OVER HEADER & FOOTER) --- */
 .album-lightbox {
     display: none;
     position: fixed;
-    inset: 0;
-    z-index: 9000;
-    background: rgba(0, 0, 0, 0.92);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999;
+    background: rgba(6, 8, 12, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 16px;
+    box-sizing: border-box;
 }
 
 .album-lightbox.active {
@@ -1364,61 +1372,74 @@ h3 {
 .album-lightbox-inner {
     position: relative;
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
+    height: 100%;
+    max-height: 96vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    justify-content: space-between;
+    gap: 10px;
     animation: lb-in 0.25s ease;
 }
 
 @keyframes lb-in {
-    from { opacity: 0; transform: scale(0.96); }
+    from { opacity: 0; transform: scale(0.97); }
     to   { opacity: 1; transform: scale(1); }
 }
 
 .album-lb-close {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
     position: absolute;
-    top: -10px;
-    right: -10px;
-    background: var(--color-primary);
-    border: none;
-    color: #fff;
-    width: 38px;
-    height: 38px;
+    top: -4px;
+    right: 0;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    font-size: 1.5rem;
-    line-height: 1;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s;
-    z-index: 10;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 100;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+    padding: 0;
+}
+
+.album-lb-close svg {
+    display: block;
 }
 
 .album-lb-close:hover {
-    background: var(--color-primary-dark);
+    color: var(--color-primary);
 }
 
 .album-lb-title {
-    color: #fff;
+    color: #ffffff;
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
     text-align: center;
     margin: 0;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .album-lb-stage {
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    gap: 16px;
     width: 100%;
+    flex: 1;
+    min-height: 0;
 }
 
 .album-lb-img-wrap {
     flex: 1;
-    max-height: 65vh;
+    height: 100%;
+    max-height: 74vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1428,36 +1449,49 @@ h3 {
 
 .album-lb-img-wrap img {
     max-width: 100%;
-    max-height: 65vh;
+    max-height: 74vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
     border-radius: var(--border-radius-md);
     display: block;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8);
 }
 
 .album-lb-arrow {
-    background: rgba(255,255,255,0.12);
-    border: none;
-    color: #fff;
-    font-size: 2.5rem;
-    line-height: 1;
-    width: 48px;
-    height: 48px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
+    user-select: none;
+    backdrop-filter: blur(4px);
+    padding: 0;
+}
+
+.album-lb-arrow svg {
+    display: block;
 }
 
 .album-lb-arrow:hover {
-    background: rgba(214, 34, 41, 0.7);
+    color: var(--color-primary);
 }
 
 .album-lb-counter {
-    color: rgba(255,255,255,0.6);
-    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    text-align: center;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .album-lb-thumbs {
@@ -1466,23 +1500,41 @@ h3 {
     flex-wrap: wrap;
     justify-content: center;
     max-width: 100%;
+    max-height: 60px;
+    overflow-y: hidden;
 }
 
 .album-lb-thumb {
     width: 60px;
-    height: 44px;
+    height: 42px;
     object-fit: cover;
     border-radius: 6px;
     cursor: pointer;
-    opacity: 0.55;
+    opacity: 0.5;
     border: 2px solid transparent;
-    transition: opacity 0.2s, border-color 0.2s;
+    transition: opacity 0.2s, border-color 0.2s, transform 0.2s;
 }
 
 .album-lb-thumb.active,
 .album-lb-thumb:hover {
     opacity: 1;
     border-color: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .album-lb-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 2rem;
+    }
+    .album-lb-img-wrap img {
+        max-height: 68vh;
+    }
+    .album-lb-thumb {
+        width: 48px;
+        height: 34px;
+    }
 }
 
 
@@ -1812,52 +1864,57 @@ h3 {
     padding-left: 5px;
 }
 
-.emergency-card {
+/* Footer Sponsors Card */
+.sponsors-card {
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--border-radius-md);
-    padding: 24px;
+    padding: 20px;
 }
 
-.emergency-card h4 {
+.sponsors-card h4 {
     color: #ffffff;
+    font-size: 1.1rem;
     margin-bottom: 15px;
+    font-family: var(--font-heading);
+    font-weight: 700;
 }
 
-.emergency-numbers {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.num-item {
+.sponsors-grid {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.sponsor-item {
+    color: #a0aec0;
+    display: flex;
     align-items: center;
-    background-color: var(--color-primary-dark);
+    gap: 12px;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.sponsor-item:hover {
     color: #ffffff;
-    padding: 10px;
-    border-radius: 8px;
-    flex: 1;
-    text-align: center;
+    padding-left: 5px;
 }
 
-.num-item .num {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.5rem;
-    line-height: 1.1;
+.sponsor-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 2px;
+    flex-shrink: 0;
 }
 
-.num-item .lbl {
-    font-size: 0.65rem;
-    text-transform: uppercase;
+.sponsor-name {
+    color: #ffffff;
     font-weight: 600;
-}
-
-.emergency-card p {
-    font-size: 0.8rem;
-    line-height: 1.4;
+    font-size: 0.9rem;
+    line-height: 1.3;
 }
 
 .footer-bottom {
