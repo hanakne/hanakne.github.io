@@ -808,6 +808,10 @@ body.light-theme .hero-bg-overlay {
     line-height: 1.4;
 }
 
+.nabor-img {
+    margin-top: 30px;
+}
+
 /* --- SECTION 2: JEDNOTKA JSDH --- */
 .jsdh-intro-grid {
     display: grid;
@@ -991,6 +995,7 @@ body.light-theme .hero-bg-overlay {
 .museum-info-box p {
     color: var(--color-text-muted);
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 .museum-highlights {
