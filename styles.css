@@ -23,31 +23,17 @@
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Theme: Dark Mode (Default) */
-body.dark-theme {
-    --color-bg: hsl(220, 15%, 8%);
-    --color-bg-alt: hsl(220, 15%, 12%);
-    --color-card: rgba(30, 32, 40, 0.7);
-    --color-card-border: rgba(255, 255, 255, 0.08);
-    --color-text: hsl(220, 15%, 85%);
-    --color-text-muted: hsl(220, 10%, 60%);
-    --color-text-bold: hsl(0, 0%, 100%);
-    --color-header-bg: rgba(15, 17, 23, 0.85);
-    --color-input-bg: rgba(20, 22, 28, 0.6);
-    --glass-opacity: 0.1;
-}
-
-/* Theme: Light Mode */
-body.light-theme {
+/* Light Theme (Permanent Default) */
+:root {
     --color-bg: hsl(220, 20%, 97%);
     --color-bg-alt: hsl(220, 20%, 93%);
-    --color-card: rgba(255, 255, 255, 0.85);
+    --color-card: rgba(255, 255, 255, 0.9);
     --color-card-border: rgba(0, 0, 0, 0.08);
     --color-text: hsl(220, 20%, 25%);
     --color-text-muted: hsl(220, 15%, 45%);
     --color-text-bold: hsl(220, 25%, 10%);
-    --color-header-bg: rgba(255, 255, 255, 0.85);
-    --color-input-bg: rgba(255, 255, 255, 0.9);
+    --color-header-bg: rgba(255, 255, 255, 0.92);
+    --color-input-bg: rgba(255, 255, 255, 0.95);
     --glass-opacity: 0.05;
 }
 
@@ -253,36 +239,32 @@ h3 {
     gap: 12px;
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-    background: none;
-    border: 1px solid var(--color-card-border);
-    color: var(--color-text);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
+/* Header Fire Report Button */
+.header-fire-btn {
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    white-space: nowrap;
+    border-radius: var(--border-radius-sm);
+    color: #ffffff !important;
+    display: inline-flex;
     align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(214, 34, 41, 0.3);
     transition: var(--transition-smooth);
 }
 
-.theme-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: var(--color-primary-light);
-    color: var(--color-primary-light);
-    transform: scale(1.05);
+.header-fire-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(214, 34, 41, 0.4);
+    color: #ffffff !important;
 }
 
-body.dark-theme .sun-icon { display: block; }
-body.dark-theme .moon-icon { display: none; }
-body.light-theme .sun-icon { display: none; }
-body.light-theme .moon-icon { display: block; }
-
-.theme-toggle svg {
-    width: 20px;
-    height: 20px;
+@media (max-width: 540px) {
+    .header-fire-btn {
+        padding: 6px 12px;
+        font-size: 0.78rem;
+    }
 }
 
 /* Mobile Menu Toggle */
@@ -326,13 +308,8 @@ body.light-theme .moon-icon { display: block; }
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(15, 17, 23, 0.9) 0%, rgba(15, 17, 23, 0.6) 100%);
-    z-index: 1;
-}
-
-/* Adjust overlay background for light theme in hero */
-body.light-theme .hero-bg-overlay {
     background: linear-gradient(135deg, rgba(240, 242, 245, 0.95) 0%, rgba(240, 242, 245, 0.8) 100%);
+    z-index: 1;
 }
 
 .hero-container {
@@ -809,7 +786,7 @@ body.light-theme .hero-bg-overlay {
 }
 
 .nabor-img {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 /* --- SECTION 2: JEDNOTKA JSDH --- */
@@ -1590,17 +1567,13 @@ body.light-theme .hero-bg-overlay {
 .mock-map {
     width: 100%;
     height: 250px;
-    background: radial-gradient(circle at center, #2e313d 0%, #17181d 100%);
+    background: radial-gradient(circle at center, #e8ebf0 0%, #c4c9d4 100%);
     border-radius: var(--border-radius-md);
     position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-body.light-theme .mock-map {
-    background: radial-gradient(circle at center, #e8ebf0 0%, #c4c9d4 100%);
 }
 
 .map-overlay-pin {
@@ -1683,10 +1656,6 @@ body.light-theme .mock-map {
 }
 
 .map-link:hover .mock-map {
-    background: radial-gradient(circle at center, #3c404f 0%, #17181d 100%);
-}
-
-body.light-theme .map-link:hover .mock-map {
     background: radial-gradient(circle at center, #f0f3f8 0%, #c4c9d4 100%);
 }
 
@@ -2342,17 +2311,13 @@ body.light-theme .map-link:hover .mock-map {
 }
 
 .interventions-table th {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(0, 0, 0, 0.03);
     border-bottom: 2px solid var(--color-card-border);
     padding: 10px;
     text-align: left;
     font-family: var(--font-heading);
     font-weight: 700;
     color: var(--color-text-bold);
-}
-
-body.light-theme .interventions-table th {
-    background-color: rgba(0, 0, 0, 0.02);
 }
 
 .interventions-table td {
