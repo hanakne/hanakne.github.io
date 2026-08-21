@@ -283,9 +283,11 @@ h3 {
         gap: 8px;
     }
     .header-fire-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 5px 9px;
-        font-size: 0.72rem;
-        gap: 4px;
+        line-height: 1.2;
     }
     .header-fire-btn svg {
         width: 13px;
@@ -929,17 +931,6 @@ h3 {
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
-}
-
-.tech-icon-circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgba(214, 34, 41, 0.1);
-    color: var(--color-primary-light);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .tech-names h4 {
@@ -2069,93 +2060,6 @@ h3 {
     text-align: center;
 }
 
-/* --- ALARM SIMULATOR OVERLAY --- */
-.alarm-simulation-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.85);
-    z-index: 3000;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(10px);
-}
-
-.alarm-simulation-overlay.active {
-    display: flex;
-    animation: fadeIn 0.3s forwards;
-}
-
-.alarm-modal {
-    background-color: hsl(220, 15%, 8%);
-    border: 3px solid var(--color-primary);
-    border-radius: var(--border-radius-lg);
-    width: 90%;
-    max-width: 500px;
-    padding: 35px;
-    box-shadow: 0 0 50px rgba(214, 34, 41, 0.5);
-    text-align: center;
-    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.alarm-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 25px;
-}
-
-.alarm-header h3 {
-    color: var(--color-primary-light);
-    font-size: 1.4rem;
-    margin-bottom: 0;
-}
-
-.alarm-pulse {
-    width: 14px;
-    height: 14px;
-    background-color: var(--color-primary-light);
-    border-radius: 50%;
-    animation: pulse 1s infinite;
-}
-
-.alarm-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: rgba(214, 34, 41, 0.1);
-    color: var(--color-primary-light);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 20px;
-    animation: ring 1s infinite alternate;
-}
-
-.alarm-type {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.alarm-desc {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    margin-bottom: 25px;
-}
-
-.alarm-timer {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: var(--color-accent);
-    margin-bottom: 30px;
-}
-
 /* --- ANIMATIONS --- */
 @keyframes pulse {
     0% {
@@ -2203,7 +2107,7 @@ h3 {
     100% { transform: rotate(8deg); }
 }
 
-/* --- RESPONZIVITA (RESPONSIVENESS) --- */
+/* --- RESPONSIVENESS --- */
 @media (max-width: 1024px) {
     .hero-container {
         flex-direction: column;
@@ -2256,7 +2160,6 @@ h3 {
         text-align: left !important;
     }
 
-
     .timeline-item:nth-child(odd) .timeline-badge {
         left: 5px;
     }
@@ -2268,7 +2171,6 @@ h3 {
         text-align: left;
     }
 
-    
     .visiting-grid {
         grid-template-columns: 1fr;
     }
@@ -2328,10 +2230,15 @@ h3 {
     }
 
     .tech-grid {
+        margin: 30px 0;
         grid-template-columns: 1fr;
     }
+
+    .tech-card {
+        margin-bottom: 10px;
+    }
     
-    .museum-showcase {
+    .block-showcase {
         grid-template-columns: 1fr;
         gap: 30px;
     }
