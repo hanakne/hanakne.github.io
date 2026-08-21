@@ -23,7 +23,7 @@
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Light Theme (Permanent Default) */
+
 :root {
     --color-bg: hsl(220, 20%, 97%);
     --color-bg-alt: hsl(220, 20%, 93%);
@@ -101,61 +101,6 @@ h2 {
 h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-}
-
-/* --- Emergency Bar --- */
-.emergency-bar {
-    background-color: var(--color-primary-dark);
-    color: #ffffff;
-    font-family: var(--font-heading);
-    padding: 8px 0;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    z-index: 1001;
-    position: relative;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.emergency-bar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-
-.emergency-text {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.pulse-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--color-accent);
-    border-radius: 50%;
-    display: inline-block;
-    animation: pulse 1.5s infinite;
-}
-
-.dispatch-badge {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    transition: var(--transition-smooth);
-}
-
-.dispatch-badge.active-callout {
-    background-color: var(--color-accent);
-    color: #000000;
-    animation: flash-border 1s infinite alternate;
 }
 
 /* --- Header / Navigation --- */
@@ -328,9 +273,9 @@ h3 {
 .hero-section {
     position: relative;
     padding: 100px 0 120px;
-    background: radial-gradient(circle at top right, rgba(214, 34, 41, 0.15) 0%, transparent 60%),
-                radial-gradient(circle at bottom left, rgba(30, 32, 40, 0.8) 0%, transparent 50%),
-                url('assets/muzeum_zvenku.jpeg') no-repeat center center / cover;
+    background: radial-gradient(circle at top right, rgba(214, 34, 41, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at bottom left, rgba(30, 32, 40, 0.8) 0%, transparent 30%),
+                url('assets/prilby2.jpg') no-repeat center center / cover;
     overflow: hidden;
     min-height: 520px;
     display: flex;
@@ -464,121 +409,6 @@ h3 {
     padding: 8px 16px;
     font-size: 0.85rem;
     border-radius: var(--border-radius-sm);
-}
-
-/* --- Status Card Widget --- */
-.status-card {
-    background-color: var(--color-card);
-    border: 1px solid var(--color-card-border);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--border-radius-lg);
-    padding: 24px;
-    box-shadow: var(--shadow-lg);
-}
-
-.status-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--color-card-border);
-    padding-bottom: 15px;
-}
-
-.status-header h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0;
-    color: var(--color-text-muted);
-    font-weight: 600;
-}
-
-.status-dot-pulse {
-    width: 12px;
-    height: 12px;
-    background-color: var(--color-success);
-    border-radius: 50%;
-    animation: pulse 1.5s infinite;
-}
-
-.status-indicator {
-    padding: 16px;
-    border-radius: var(--border-radius-md);
-    margin-bottom: 20px;
-    transition: var(--transition-smooth);
-}
-
-.status-indicator.ready {
-    background-color: rgba(67, 160, 71, 0.1);
-    border-left: 4px solid var(--color-success);
-}
-
-.status-indicator.active-alarm {
-    background-color: rgba(214, 34, 41, 0.15);
-    border-left: 4px solid var(--color-primary-light);
-}
-
-.status-title {
-    display: block;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.15rem;
-    margin-bottom: 6px;
-}
-
-.status-indicator.ready .status-title {
-    color: var(--color-success);
-}
-
-.status-indicator.active-alarm .status-title {
-    color: var(--color-primary-light);
-    animation: flash 1s infinite alternate;
-}
-
-.status-desc {
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-    line-height: 1.4;
-    display: block;
-}
-
-.status-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    margin-bottom: 20px;
-}
-
-.meta-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.meta-label {
-    color: var(--color-text-muted);
-}
-
-.meta-val {
-    font-weight: 600;
-    color: var(--color-text-bold);
-}
-
-.btn-demo-trigger {
-    background-color: rgba(214, 34, 41, 0.08);
-    border: 1px dashed var(--color-primary-light);
-    color: var(--color-primary-light);
-    padding: 10px;
-    border-radius: var(--border-radius-sm);
-    width: 100%;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.8rem;
-    transition: var(--transition-smooth);
-}
-
-.btn-demo-trigger:hover {
-    background-color: var(--color-primary-light);
-    color: #ffffff;
 }
 
 /* --- SPA Content Router --- */
@@ -760,79 +590,11 @@ h3 {
     margin-bottom: 20px;
 }
 
-.stats-row {
-    display: flex;
-    gap: 30px;
-    margin-top: 35px;
-}
-
-.stat-counter {
-    display: flex;
-    flex-direction: column;
-}
-
-.stat-num {
-    font-family: var(--font-heading);
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: var(--color-primary-light);
-    line-height: 1;
-}
-
-.stat-lbl {
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-}
-
-.intro-features {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.feature-item {
-    display: flex;
-    gap: 15px;
-}
-
-.feature-icon {
-    width: 44px;
-    height: 44px;
-    background-color: rgba(214, 34, 41, 0.1);
-    color: var(--color-primary-light);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.feature-desc h4 {
-    font-size: 1.05rem;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-.feature-desc p {
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-    margin-bottom: 0;
-    line-height: 1.4;
-}
-
 .nabor-img {
     margin-top: 20px;
 }
 
 /* --- SECTION 2: JEDNOTKA JSDH --- */
-.jsdh-intro-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
-    align-items: center;
-    margin-bottom: 60px;
-}
-
 .jsdh-card {
     background-color: var(--color-card);
     border: 1px solid var(--color-card-border);
@@ -850,28 +612,6 @@ h3 {
     margin-bottom: 20px;
 }
 
-.check-list {
-    margin-top: 20px;
-}
-
-.check-list li {
-    position: relative;
-    padding-left: 28px;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-}
-
-.check-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--color-success);
-    font-weight: 800;
-    font-size: 1.1rem;
-}
-
 .rounded-img {
     border-radius: var(--border-radius-lg);
 }
@@ -884,19 +624,6 @@ h3 {
     width: 100%;
     height: auto;
     object-fit: cover;
-}
-
-.jsdh-img-box {
-    overflow: hidden;
-    border-radius: var(--border-radius-lg);
-}
-
-.jsdh-img-box img {
-    transition: var(--transition-smooth);
-}
-
-.jsdh-img-box:hover img {
-    transform: scale(1.03);
 }
 
 .subsection-title {
@@ -949,34 +676,6 @@ h3 {
     color: var(--color-text-muted);
     font-size: 0.95rem;
     margin-bottom: 20px;
-}
-
-.tech-specs-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.tech-specs-table tr {
-    border-bottom: 1px solid var(--color-card-border);
-}
-
-.tech-specs-table tr:last-child {
-    border-bottom: none;
-}
-
-.tech-specs-table td {
-    padding: 8px 0;
-    font-size: 0.85rem;
-}
-
-.tech-specs-table td:first-child {
-    font-weight: 600;
-    color: var(--color-text-bold);
-    width: 110px;
-}
-
-.tech-specs-table td:last-child {
-    color: var(--color-text-muted);
 }
 
 /* --- SECTION 3: MUZEUM STŘÍKAČEK --- */
@@ -1092,20 +791,6 @@ h3 {
 .border-left {
     border-left: 1px solid var(--color-card-border);
     padding-left: 40px;
-}
-
-.visit-cta {
-    margin-top: 25px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.phone-num {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.3rem;
-    color: var(--color-text-bold);
 }
 
 /* --- SECTION 4: O NÁS & HISTORIE --- */
@@ -1372,11 +1057,6 @@ h3 {
     font-weight: 700;
     font-size: 1rem;
     color: var(--color-text-bold);
-}
-
-.album-count {
-    font-size: 0.78rem;
-    color: var(--color-text-muted);
 }
 
 /* --- ALBUM LIGHTBOX (FULLSCREEN OVER HEADER & FOOTER) --- */
@@ -1648,103 +1328,6 @@ h3 {
     padding: 10px;
     overflow: hidden;
 }
-
-/* Styled Interactive Mock Map */
-.mock-map {
-    width: 100%;
-    height: 250px;
-    background: radial-gradient(circle at center, #e8ebf0 0%, #c4c9d4 100%);
-    border-radius: var(--border-radius-md);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.map-overlay-pin {
-    position: relative;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pin-pulse {
-    position: absolute;
-    bottom: 2px;
-    width: 20px;
-    height: 20px;
-    background-color: var(--color-primary-light);
-    opacity: 0.4;
-    border-radius: 50%;
-    animation: pulse 1.5s infinite;
-}
-
-.map-details {
-    position: absolute;
-    bottom: 20px;
-    background-color: var(--color-card);
-    border: 1px solid var(--color-card-border);
-    padding: 10px 15px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    font-size: 0.8rem;
-    box-shadow: var(--shadow-md);
-    z-index: 5;
-}
-
-.map-details strong {
-    color: var(--color-text-bold);
-}
-
-.map-details span {
-    color: var(--color-text-muted);
-}
-
-.map-caption {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: rgba(0,0,0,0.6);
-    color: #ffffff;
-    font-size: 0.7rem;
-    padding: 4px 10px;
-    border-radius: 20px;
-}
-
-.map-link {
-    display: block;
-    text-decoration: none;
-}
-
-.map-action-badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background-color: var(--color-primary);
-    color: #ffffff;
-    font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 0.75rem;
-    padding: 6px 14px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(214, 34, 41, 0.3);
-    transition: var(--transition-smooth);
-    z-index: 5;
-}
-
-.map-link:hover .map-action-badge {
-    background-color: var(--color-primary-light);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(214, 34, 41, 0.5);
-}
-
-.map-link:hover .mock-map {
-    background: radial-gradient(circle at center, #f0f3f8 0%, #c4c9d4 100%);
-}
-
 
 /* Forms */
 .form-card {
@@ -2309,7 +1892,7 @@ h3 {
     }
 }
 
-/* --- Interventions Table --- */
+/* --- Call table - vyjezdy --- */
 .interventions-table {
     width: 100%;
     border-collapse: collapse;
@@ -2345,7 +1928,6 @@ h3 {
     white-space: nowrap;
     width: 90px;
 }
-
 /* Badges for table */
 .badge {
     display: inline-block;
