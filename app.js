@@ -119,17 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
         technika: {
             name: 'Technika sboru',
             photos: [
-                { src: 'assets/da_ford.jpg'},
-                { src: 'assets/da_avia.jpg'},
-                { src: 'assets/da_vejda1.jpg'},
+                { src: 'assets/technika/da_ford.jpg'},
+                { src: 'assets/technika/da_avia.jpg'},
+                { src: 'assets/technika/da_vejda1.jpg'},
             ]
         },
         ples: {
             name: 'Hasičský ples 2026',
             photos: [
-                { src: 'assets/ples.jpg'},
-                { src: 'assets/ples2.jpg'},
-                { src: 'assets/ples3.jpg'},
+                { src: 'assets/ples_26/ples.jpg'},
+                { src: 'assets/ples_26/ples2.jpg'},
+                { src: 'assets/ples_26/ples3.jpg'},
             ]
         },
         sezona_26: {
