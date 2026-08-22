@@ -102,3 +102,49 @@
 .form-success-message p {
     margin-bottom: 25px;
 }
+
+/* --- SECTION 5: MLADÍ HASIČI --- */
+.youth-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.youth-media {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.youth-text h3 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+}
+
+.youth-text p {
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+}
+
+.youth-recruitment {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-md);
+    padding: 24px;
+    margin-top: 30px;
+}
+
+.youth-recruitment h4 {
+    color: var(--color-primary-light);
+    margin-bottom: 8px;
+}
+
+.youth-recruitment p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.youth-recruitment p:last-child {
+    margin-bottom: 0;
+}
