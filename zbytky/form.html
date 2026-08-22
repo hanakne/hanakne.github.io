@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+<!-- SECTION 5: Mladí hasiči/Sport-->
+            <section id="page-mladez" class="page-content">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-pre">Naše budoucnost</span>
+                        <h2>Mladí hasiči Velké Svatoňovice</h2>
+                        <div class="section-divider"></div>
+                    </div>
+
+                    <div class="youth-layout">
+                        <div class="youth-media">
+                            <img id="youth-img-placeholder" src="assets/youth.jpg" alt="Mladí hasiči při tréninku" class="responsive-img rounded-img shadow">
+                        </div>
+                        <div class="youth-text">
+                            <h3>Výchova nové generace</h3>
+                            <p>Kroužek mladých hasičů má u nás dlouholetou tradici. Naším cílem je ukázat dětem, že hasičina není jen o hašení požárů, ale také o kamarádství, vzájemné pomoci, fyzické kondici a disciplíně.</p>
+                            <p>Děti se scházejí pravidelně každý týden (během školního roku). Pod vedením zkušených certifikovaných vedoucích se učí:</p>
+                            <ul class="check-list">
+                                <li>Základy požární ochrany a topografie</li>
+                                <li>Uzlování a základy první pomoci</li>
+                                <li>Práci s hasičským nářadím a hadicemi</li>
+                                <li>Týmům spolupráci při sportovní hře Plamen</li>
+                            </ul>
+                            <div class="youth-recruitment">
+                                <h4>Přijímáme nové členy!</h4>
+                                <p>Máš doma kluka nebo holku ve věku od 6 do 15 let, kteří mají rádi pohyb a dobrodružství? Přijďte se podívat na náš trénink.</p>
+                                <p><strong>Kdy trénujeme:</strong> Každý čtvrtek od 16:30 u hasičské zbrojnice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+<!-- Contact form -->
+    <div class="contact-form-container">
+        <div class="form-card">
+            <h3>Napište nám zprávu</h3>
+            <p>Máte dotaz k muzeu, kroužku mladých hasičů, jednotce nebo nám chcete poslat vzkaz? Použijte tento formulář a my se vám ozveme zpět.</p>
+
+            <form id="contact-form" class="custom-form">
+                <div class="form-group">
+                    <input type="text" id="form-name" required placeholder=" ">
+                    <label for="form-name">Jméno a příjmení</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="form-email" required placeholder=" ">
+                    <label for="form-email">E-mailová adresa</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" id="form-phone" placeholder=" ">
+                    <label for="form-phone">Telefonní číslo (nepovinné)</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="form-message" rows="5" required placeholder=" "></textarea>
+                    <label for="form-message">Vaše zpráva</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Odeslat zprávu</button>
+            </form>
+            <div class="form-success-message" id="form-success">
+                <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--color-success)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <h4>Zpráva byla úspěšně odeslána!</h4>
+                <p>Děkujeme za váš zájem. Odpovíme vám co nejdříve na uvedený e-mail.</p>
+                <button class="btn btn-secondary btn-sm" id="btn-form-reset">Napsat další zprávu</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
