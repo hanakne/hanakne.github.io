@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         sezona_26: {
-            name: 'Sezona 2026',
+            name: 'Sezóna 2026',
             photos: [
                 { src: 'assets/sezona_26/marsov_26.jpg'},
                 { src: 'assets/sezona_26/trenink_26.jpg'},
