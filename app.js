@@ -143,6 +143,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 { src: 'assets/sezona_26/nocky.jpg'},
                 { src: 'assets/sezona_26/lanzov_26.jpg'},
             ]
+        },
+        krouzek: {
+            name: 'Kroužek mladých hasičů',
+            photos: [
+                { src: 'assets/krouzek/deti.jpg'},
+                { src: 'assets/krouzek/krouzek1.jpg'},
+                { src: 'assets/krouzek/krouzek2.jpg'},
+                { src: 'assets/krouzek/krouzek3.jpg'},
+                { src: 'assets/krouzek/krouzek4.jpg'},
+                { src: 'assets/krouzek/krouzek5.jpg'},
+                { src: 'assets/krouzek/krouzek6.jpg'},
+            ]
         }
     };
 

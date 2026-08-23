@@ -1231,7 +1231,7 @@ h3 {
 .main-footer {
     background-color: hsl(220, 20%, 5%);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 70px 0 0;
+    padding: 40px 0 0;
     color: #a0aec0;
     font-size: 0.9rem;
 }
