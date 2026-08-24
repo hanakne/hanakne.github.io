@@ -155,6 +155,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 { src: 'assets/krouzek/krouzek5.jpg'},
                 { src: 'assets/krouzek/krouzek6.jpg'},
             ]
+        },
+        historie: {
+            name: 'Historie',
+            photos: [
+                { src: 'assets/historie/historie1.jpg'},
+                { src: 'assets/historie/historie2.jpg'},
+                { src: 'assets/historie/historie3.jpg'},
+                { src: 'assets/historie/historie4.jpg'},
+                { src: 'assets/historie/historie5.jpg'},
+                { src: 'assets/historie/historie6.jpg'},
+                { src: 'assets/historie/historie7.jpg'},
+                { src: 'assets/historie/historie8.jpg'},
+            ]
         }
     };
 
