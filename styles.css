@@ -654,6 +654,19 @@ h3 {
     box-shadow: var(--shadow-md);
 }
 
+.tech-img-box {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: var(--border-radius-md);
+    height: 250px;
+}
+
+.tech-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .tech-header {
     display: flex;
     align-items: center;
