@@ -624,7 +624,7 @@ h3 {
 }
 
 .shadow {
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
 }
 
 .responsive-img {
@@ -650,7 +650,7 @@ h3 {
     border: 1px solid var(--color-card-border);
     border-radius: var(--border-radius-md);
     padding: 30px;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
     transition: var(--transition-smooth);
     margin: 5px 0 30px;
 }
@@ -747,14 +747,14 @@ h3 {
 .block-media-box {
     border-radius: var(--border-radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
 }
 
 .museum-visiting-card {
     background-color: var(--color-card);
     border: 1px solid var(--color-card-border);
     border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
 }
 
@@ -914,6 +914,7 @@ h3 {
 .timeline-panel:hover {
     border-color: rgba(214, 34, 41, 0.2);
     transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .highlight-panel {
@@ -1297,7 +1298,6 @@ h3 {
 .sponsors-card {
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--border-radius-md);
     padding: 20px;
 }
 
