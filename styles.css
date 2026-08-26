@@ -37,6 +37,11 @@
     --glass-opacity: 0.05;
 }
 
+
+::selection {
+    background: hsl(354 95% 55%/ 50%);
+
+}
 /* --- Base & Reset --- */
 * {
     box-sizing: border-box;
@@ -47,6 +52,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    scrollbar-color:  hsl(354 95% 55%) hsl(220 25% 10%) ;
 }
 
 body {
