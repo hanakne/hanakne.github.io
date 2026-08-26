@@ -575,7 +575,7 @@ h3 {
 .intro-block {
     background-color: var(--color-bg-alt);
     border: 1px solid var(--color-card-border);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-md);
     padding: 50px;
     box-shadow: var(--shadow-sm);
 }
@@ -605,7 +605,7 @@ h3 {
 .jsdh-card {
     background-color: var(--color-card);
     border: 1px solid var(--color-card-border);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-md);
     padding: 40px;
     box-shadow: var(--shadow-sm);
 }
@@ -620,11 +620,11 @@ h3 {
 }
 
 .rounded-img {
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-md);
 }
 
 .shadow {
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
 }
 
 .responsive-img {
@@ -648,9 +648,9 @@ h3 {
 .tech-card {
     background-color: var(--color-card);
     border: 1px solid var(--color-card-border);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-md);
     padding: 30px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     transition: var(--transition-smooth);
     margin: 5px 0 30px;
 }
@@ -745,15 +745,15 @@ h3 {
 }
 
 .block-media-box {
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
 }
 
 .museum-visiting-card {
     background-color: var(--color-card);
     border: 1px solid var(--color-card-border);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-md);
     overflow: hidden;
 }
@@ -942,7 +942,7 @@ h3 {
 }
 
 .album-card {
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-md);
     overflow: hidden;
     background-color: var(--color-card);
     border: 1px solid var(--color-card-border);
@@ -1003,7 +1003,7 @@ h3 {
     color: var(--color-text-bold);
 }
 
-/* --- ALBUM LIGHTBOX (FULLSCREEN OVER HEADER & FOOTER) --- */
+/* --- ALBUM LIGHTBOX  --- */
 .album-lightbox {
     display: none;
     position: fixed;
@@ -1166,6 +1166,9 @@ h3 {
     }
 }
 
+
+/* --- SECTION 7: KONTAKTY ---*/
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1181,7 +1184,7 @@ h3 {
 .contact-card {
     background-color: var(--color-card);
     border: 1px solid var(--color-card-border);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-md);
     padding: 30px;
     box-shadow: var(--shadow-sm);
 }
