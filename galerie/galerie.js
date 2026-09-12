@@ -1,0 +1,188 @@
+// --- 4. ALBUM FOTOGALERIE & LIGHTBOX ---
+const albumData = {
+    muzeum: {
+        name: 'Oslavy 25 let muzea',
+        photos: [
+            { src: 'assets/oslavy_muzeum/oslavy_muzeum.jpg'},
+            { src: 'assets/oslavy_muzeum/oslavy2.jpg'},
+            { src: 'assets/oslavy_muzeum/oslavy3.jpg'},
+            { src: 'assets/oslavy_muzeum/oslavy4.jpg'},
+            { src: 'assets/oslavy_muzeum/oslavy5.jpg'},
+            { src: 'assets/oslavy_muzeum/oslavy6.jpg'},
+            { src: 'assets/oslavy_muzeum/oslavy7.jpg'},
+        ]
+    },
+    technika: {
+        name: 'Technika sboru',
+        photos: [
+            { src: 'assets/technika/da_ford.jpg'},
+            { src: 'assets/technika/da_avia.jpg'},
+            { src: 'assets/technika/da_vejda1.jpg'},
+        ]
+    },
+    ples: {
+        name: 'Hasičský ples 2026',
+        photos: [
+            { src: 'assets/ples_26/ples.jpg'},
+            { src: 'assets/ples_26/ples2.jpg'},
+            { src: 'assets/ples_26/ples3.jpg'},
+        ]
+    },
+    sezona_26: {
+        name: 'Sezóna 2026',
+        photos: [
+            { src: 'assets/sezona_26/marsov_26.jpg'},
+            { src: 'assets/sezona_26/trenink_26.jpg'},
+            { src: 'assets/sezona_26/okres_26.jpg'},
+            { src: 'assets/sezona_26/libnatov_26.jpg'},
+            { src: 'assets/sezona_26/rudnik_26.jpg'},
+            { src: 'assets/sezona_26/nocky.jpg'},
+            { src: 'assets/sezona_26/lanzov_26.jpg'},
+        ]
+    },
+    krouzek: {
+        name: 'Kroužek mladých hasičů',
+        photos: [
+            { src: 'assets/krouzek/deti.jpg'},
+            { src: 'assets/krouzek/krouzek1.jpg'},
+            { src: 'assets/krouzek/krouzek2.jpg'},
+            { src: 'assets/krouzek/krouzek3.jpg'},
+            { src: 'assets/krouzek/krouzek4.jpg'},
+            { src: 'assets/krouzek/krouzek5.jpg'},
+            { src: 'assets/krouzek/krouzek6.jpg'},
+        ]
+    },
+    historie: {
+        name: 'Historie',
+        photos: [
+            { src: 'assets/historie/historie1.jpg'},
+            { src: 'assets/historie/historie2.jpg'},
+            { src: 'assets/historie/historie3.jpg'},
+            { src: 'assets/historie/historie4.jpg'},
+            { src: 'assets/historie/historie5.jpg'},
+            { src: 'assets/historie/historie6.jpg'},
+            { src: 'assets/historie/historie7.jpg'},
+            { src: 'assets/historie/historie8.jpg'},
+        ]
+    }
+};
+
+const AlbumState = {
+    photos: [],
+    index: 0,
+    touchStartX: 0,
+    touchEndX: 0
+};
+
+const albumLightbox  = document.getElementById('album-lightbox');
+const albumLbImg     = document.getElementById('album-lb-img');
+const albumLbTitle   = document.getElementById('album-lb-title');
+const albumLbCounter = document.getElementById('album-lb-counter');
+const albumLbThumbs  = document.getElementById('album-lb-thumbs');
+const albumLbClose   = document.getElementById('album-lb-close');
+const albumLbPrev    = document.getElementById('album-lb-prev');
+const albumLbNext    = document.getElementById('album-lb-next');
+
+if (albumLightbox) {
+    const renderAlbumLightbox = (index) => {
+        if (!AlbumState.photos.length) return;
+        AlbumState.index = index;
+        const photo = AlbumState.photos[index];
+
+        if (albumLbImg) {
+            albumLbImg.src = photo.src;
+            albumLbImg.alt = photo.caption || '';
+        }
+        if (albumLbCounter) {
+            albumLbCounter.textContent = `${index + 1} / ${AlbumState.photos.length}`;
+        }
+        if (albumLbThumbs) {
+            albumLbThumbs.querySelectorAll('.album-lb-thumb').forEach((th, i) => {
+                th.classList.toggle('active', i === index);
+            });
+        }
+    };
+
+    const openAlbum = (albumKey) => {
+        const album = albumData[albumKey];
+        if (!album || !album.photos.length) return;
+
+        AlbumState.photos = album.photos;
+        if (albumLbTitle) albumLbTitle.textContent = album.name;
+
+        // Generate thumbnails
+        if (albumLbThumbs) {
+            albumLbThumbs.innerHTML = '';
+            album.photos.forEach((photo, i) => {
+                const thumb = document.createElement('img');
+                thumb.src = photo.src;
+                thumb.alt = photo.caption || '';
+                thumb.className = 'album-lb-thumb';
+                thumb.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    renderAlbumLightbox(i);
+                });
+                albumLbThumbs.appendChild(thumb);
+            });
+        }
+
+        renderAlbumLightbox(0);
+        albumLightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeAlbum = () => {
+        albumLightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    const navigateAlbum = (dir) => {
+        const count = AlbumState.photos.length;
+        if (count === 0) return;
+        let next = AlbumState.index + dir;
+        if (next < 0) next = count - 1;
+        if (next >= count) next = 0;
+        renderAlbumLightbox(next);
+    };
+
+    // Attach click to all album cards
+    document.querySelectorAll('.album-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const key = card.getAttribute('data-album');
+            openAlbum(key);
+        });
+    });
+
+    if (albumLbClose) albumLbClose.addEventListener('click', closeAlbum);
+    if (albumLbPrev)  albumLbPrev.addEventListener('click', (e) => { e.stopPropagation(); navigateAlbum(-1); });
+    if (albumLbNext)  albumLbNext.addEventListener('click', (e) => { e.stopPropagation(); navigateAlbum(1); });
+
+    albumLightbox.addEventListener('click', (e) => {
+        if (e.target === albumLightbox) closeAlbum();
+    });
+
+    // Keyboard navigation (Escape, Left, Right)
+    document.addEventListener('keydown', (e) => {
+        if (!albumLightbox.classList.contains('active')) return;
+        if (e.key === 'Escape')     closeAlbum();
+        if (e.key === 'ArrowLeft')  navigateAlbum(-1);
+        if (e.key === 'ArrowRight') navigateAlbum(1);
+    });
+
+    // Touch swipe gestures for mobile
+    albumLightbox.addEventListener('touchstart', (e) => {
+        AlbumState.touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    albumLightbox.addEventListener('touchend', (e) => {
+        AlbumState.touchEndX = e.changedTouches[0].screenX;
+        const diff = AlbumState.touchStartX - AlbumState.touchEndX;
+        if (Math.abs(diff) > 45) {
+            if (diff > 0) {
+                navigateAlbum(1); // Swipe left -> Next
+            } else {
+                navigateAlbum(-1); // Swipe right -> Prev
+            }
+        }
+    }, { passive: true });
+}
