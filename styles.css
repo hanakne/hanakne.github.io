@@ -944,6 +944,12 @@ h3 {
 }
 
 /* --- SECTION 5: KROUZEK --- */
+
+.vedouci-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
 .vedouci-card {
     background-color: var(--color-card);
     border: 1px solid var(--color-card-border);
@@ -954,6 +960,9 @@ h3 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary-light) white;
 }
 
 .vedouci-card:hover {
@@ -966,7 +975,7 @@ h3 {
 }
 
 .vedouci-foto {
-    width: 200px;
+    width: 150px;
     height: auto;
 }
 
@@ -1699,6 +1708,11 @@ h3 {
     .mobile-menu-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
     }
+
+    .vedouci-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1728,6 +1742,15 @@ h3 {
         flex-direction: column;
         gap: 20px;
     }
+
+    .vedouci-card {
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .vedouci-card h3 {
+        text-align: center;
+    }
     
     .form-card {
         padding: 24px;
@@ -1738,6 +1761,7 @@ h3 {
         align-items: flex-start;
         gap: 10px;
     }
+
 }
 
 /* --- Call table - vyjezdy --- */
